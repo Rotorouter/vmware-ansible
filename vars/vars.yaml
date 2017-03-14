@@ -1,0 +1,10 @@
+---
+SYSADMIN_NAME: "{{ lookup('env','USER') }}"
+SYSADMIN_ENVIRONMENT:
+  - /home/{{ SYSADMIN_NAME }}/.bash_profile
+  - /home/{{ SYSADMIN_NAME }}/.bashrc
+  - /home/{{ SYSADMIN_NAME }}/.vimrc
+  - /home/{{ SYSADMIN_NAME }}/.keystone
+SSH_KEY_FILE: "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
+SSH_KEY: "{{ lookup('file', SSH_KEY_FILE) }}"
+validate_certs: False
