@@ -1,0 +1,17 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - vars/vars.yaml
+    - vars/passwords.yaml
+    - vars/vcluster.yaml
+
+  tasks:
+    - name: Power on our test machine
+      vmware_guest:
+        hostname: "{{ VCENTER }}"
+        username: "{{ USERNAME }}"
+        password: "{{ PASSWORD }}"
+        name: win7.ad.dom.local
+        state: poweredon
