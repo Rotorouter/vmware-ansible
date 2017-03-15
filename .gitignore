@@ -1,2 +1,3 @@
 vars/passwords.yaml
 vars/vcluster.yaml
+inventory/hosts
