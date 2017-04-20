@@ -1,0 +1,22 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - vars/vars.yaml
+    - vars/passwords.yaml
+    - vars/vcluster.yaml
+
+  tasks:
+    - name: Get some vcenter facts
+      vmware_vm_facts:
+        hostname: "{{ VCENTER }}"
+        username: "{{ USERNAME }}"
+        password: "{{ PASSWORD }}"
+        #datacenter: Home
+        #cluster: Cluster1
+        #name: win7.ad.dom.local
+        #state: poweredon
+        validate_certs: false
+        #wait_for_ip_address: no
+...

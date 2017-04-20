@@ -13,5 +13,10 @@
         hostname: "{{ VCENTER }}"
         username: "{{ USERNAME }}"
         password: "{{ PASSWORD }}"
+        datacenter: Home
+        #cluster: Cluster1
         name: win7.ad.dom.local
         state: poweredon
+        validate_certs: false
+        wait_for_ip_address: no
+...
